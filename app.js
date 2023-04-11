@@ -18,6 +18,10 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use("/devices", deviceRouter);
 
+app.use("/", (req, res) => {
+  res.send("Hello, World");
+});
+
 app.listen(app.get("port"), () => {
   console.log(app.get("port"), "is open");
 });

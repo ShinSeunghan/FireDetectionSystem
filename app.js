@@ -3,7 +3,7 @@ const { sequelize } = require("./models");
 const deviceRouter = require("./routes/devices");
 const app = express();
 
-app.set("port", process.env.PORT || 3000);
+app.set("port", 3000);
 
 sequelize
   .sync({ force: false })

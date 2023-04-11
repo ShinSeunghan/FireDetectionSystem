@@ -3,8 +3,8 @@
     "username": "root",
     "password": "Project",
     "database": "firedetectionsystem",
-    "host": "175.210.118.74",
-    "port": 6000,
+    "host": "svc.sel3.cloudtype.app",
+    "port": 31804,
     "dialect": "mysql"
   },
   "test": {

@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.2.0",
+    "sequelize": "^6.31.0",
+    "sequelize-cli": "^6.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "name": "firedetectionsystem",
+  "version": "1.0.0",
+  "description": "한국폴리텍대학 인천캠퍼스 정보통신공학과 4학년 야간 A반 전공 프로젝트",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app"
+  },
+  "author": "신승한",
+  "license": "ISC"
+}

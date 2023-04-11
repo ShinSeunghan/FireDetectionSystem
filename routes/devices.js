@@ -8,7 +8,7 @@ router
   .get(async (req, res, next) => {
     try {
       const devices = await Device.findAll();
-      res.json(devices);
+      res.status(200).json(devices);
     } catch (err) {
       console.error(err);
       next(err);
@@ -38,7 +38,7 @@ router
         },
         { where: { name: req.params.name } }
       );
-      res.json(device);
+      res.status(200).json(device);
     } catch (err) {
       console.error(err);
       next(err);
@@ -49,7 +49,7 @@ router
       const device = Device.destroy({
         where: { name: req.params.name },
       });
-      res.json(device);
+      res.status(200).json(device);
     } catch (err) {
       console.error(err);
       next(err);

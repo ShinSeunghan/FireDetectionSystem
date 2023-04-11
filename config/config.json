@@ -1,10 +1,10 @@
 {
   "development": {
     "username": "root",
-    "password": "Project",
+    "password": "Bbang0513*",
     "database": "firedetectionsystem",
-    "host": "svc.sel3.cloudtype.app",
-    "port": 31804,
+    "host": "localhost",
+    "port": 3306,
     "dialect": "mysql"
   },
   "test": {

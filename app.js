@@ -16,10 +16,21 @@ sequelize
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use("/devices", deviceRouter);
+//app.use("/devices", deviceRouter);
 
-app.use("/", (req, res) => {
-  res.send("Hello, World");
+//app.use("/", (req, res) => {
+//  res.send("Hello, World");
+//});
+
+const Device = require("./models/deivce");
+app.get("/", async (req, res, next) => {
+  try {
+    const devices = await Device.findAll();
+    res.status(200).json(devices);
+  } catch (err) {
+    console.error(err);
+    next(err);
+  }
 });
 
 app.listen(app.get("port"), () => {

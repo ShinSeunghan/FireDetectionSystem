@@ -1,10 +1,10 @@
 {
   "development": {
     "username": "root",
-    "password": "Bbang0513*",
+    "password": "Project",
     "database": "firedetectionsystem",
-    "host": "localhost",
-    "port": 3306,
+    "host": "175.210.118.74",
+    "port": 6000,
     "dialect": "mysql"
   },
   "test": {

@@ -4,7 +4,7 @@
     "password": "Project",
     "database": "firedetectionsystem",
     "host": "svc.sel3.cloudtype.app",
-    "port": 31804,
+    "port": 30771,
     "dialect": "mysql"
   },
   "test": {

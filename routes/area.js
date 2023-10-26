@@ -28,18 +28,19 @@ router
     }
   });
 
-/*router
+router
   .route("/:name")
   .put(async (req, res, next) => {
     try {
-      const device = await Device.update(
+      const area = await Area.update(
         {
           name: req.body.name,
           address: req.body.address,
+          remark: req.body.remark,
         },
         { where: { name: req.params.name } }
       );
-      res.status(200).json(device);
+      res.status(200).json(area);
     } catch (err) {
       console.error(err);
       next(err);
@@ -47,15 +48,14 @@ router
   })
   .delete(async (req, res, next) => {
     try {
-      const device = Device.destroy({
+      const area = Area.destroy({
         where: { name: req.params.name },
       });
-      res.status(200).json(device);
+      res.status(200).json(area);
     } catch (err) {
       console.error(err);
       next(err);
     }
   });
-*/
 
 module.exports = router;

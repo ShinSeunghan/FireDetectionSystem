@@ -19,6 +19,7 @@ router
       const area = await Area.create({
         name: req.body.name,
         address: req.body.address,
+        remark: req.body.remark,
       });
       res.status(201).json(area);
     } catch (err) {

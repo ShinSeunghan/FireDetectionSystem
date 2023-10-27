@@ -35,7 +35,7 @@ class Device extends Sequelize.Model {
     );
   }
   static associate(db) {
-    db.Device.belongsTo(db.Area, {
+    db.Device.belongsTo(db.Place, {
       foreignKey: "placeName",
       targetKey: "name",
     });

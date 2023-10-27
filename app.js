@@ -21,7 +21,7 @@ app.use("/device", deviceRouter);
 app.use("/area", areaRouter);
 
 app.use("/", (req, res) => {
-  res.send("Hello, World");
+  res.send("정보통신공학과 야간 4학년 프로젝트실습");
 });
 
 app.listen(app.get("port"), () => {

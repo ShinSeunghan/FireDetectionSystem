@@ -19,8 +19,8 @@ router
       const device = await Device.create({
         placeName: req.body.placeName,
         name: req.body.name,
-        sensor_temp: req.body.sensor_temp,
-        motor_state: req.body.motor_state,
+        sensor_temp: req.body.sensorTemp,
+        motor_state: req.body.motorState,
       });
       res.status(201).json(device);
     } catch (err) {

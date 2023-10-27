@@ -13,11 +13,11 @@ class Device extends Sequelize.Model {
           primaryKey: true,
           allowNull: false,
         },
-        sensor_temp: {
+        sensorTemp: {
           type: Sequelize.INTEGER,
           allowNull: true,
         },
-        motor_state: {
+        motorState: {
           type: Sequelize.BOOLEAN,
           allowNull: true,
         },

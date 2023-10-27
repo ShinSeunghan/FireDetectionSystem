@@ -4,13 +4,21 @@ class Device extends Sequelize.Model {
   static initiate(sequelize) {
     Device.init(
       {
-        name: {
-          type: Sequelize.STRING(45),
+        area_name: {
+          type: Sequelize.STRING(50),
           allowNull: false,
-          unique: true,
         },
-        address: {
-          type: Sequelize.STRING(100),
+        name: {
+          type: Sequelize.STRING(50),
+          primaryKey: true,
+          allowNull: false,
+        },
+        sensor_temp: {
+          type: Sequelize.INTEGER,
+          allowNull: true,
+        },
+        motor_state: {
+          type: Sequelize.BOOLEAN,
           allowNull: true,
         },
       },
@@ -19,14 +27,19 @@ class Device extends Sequelize.Model {
         timestamps: false,
         underscored: false,
         modelName: "Device",
-        tableName: "devices",
+        tableName: "device",
         paranoid: false,
-        charset: "utf8",
-        collate: "utf8_general_ci",
+        charset: "utf8mb4",
+        collate: "utf8mb4_general_ci",
       }
     );
   }
-  static associate(db) {}
+  static associate(db) {
+    db.Device.belongsTo(db.Area, {
+      foreignKey: "area_name",
+      targetKey: "name",
+    });
+  }
 }
 
 module.exports = Device;

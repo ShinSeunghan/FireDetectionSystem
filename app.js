@@ -1,6 +1,6 @@
 const express = require("express");
 const { sequelize } = require("./models");
-const deviceRouter = require("./routes/devices");
+const deviceRouter = require("./routes/device");
 const areaRouter = require("./routes/area");
 const app = express();
 
@@ -17,7 +17,7 @@ sequelize
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use("/devices", deviceRouter);
+app.use("/device", deviceRouter);
 app.use("/area", areaRouter);
 
 app.use("/", (req, res) => {

@@ -8,7 +8,6 @@ class Area extends Sequelize.Model {
           type: Sequelize.STRING(50),
           primaryKey: true,
           allowNull: false,
-          unique: true,
         },
         address: {
           type: Sequelize.STRING(45),
@@ -31,7 +30,9 @@ class Area extends Sequelize.Model {
       }
     );
   }
-  static associate(db) {}
+  static associate(db) {
+    db.Area.hasMany(db.Device, { foreignKey: "area_name", sourceKey: "name" });
+  }
 }
 
 module.exports = Area;

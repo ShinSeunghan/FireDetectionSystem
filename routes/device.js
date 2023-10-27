@@ -17,8 +17,10 @@ router
   .post(async (req, res, next) => {
     try {
       const device = await Device.create({
+        area_name: req.area_name,
         name: req.body.name,
-        address: req.body.address,
+        sensor_temp: req.body.sensor_temp,
+        motor_state: req.body.motor_state,
       });
       res.status(201).json(device);
     } catch (err) {

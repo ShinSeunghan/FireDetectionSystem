@@ -4,7 +4,7 @@ class Device extends Sequelize.Model {
   static initiate(sequelize) {
     Device.init(
       {
-        area_name: {
+        placeName: {
           type: Sequelize.STRING(50),
           allowNull: false,
         },
@@ -36,7 +36,7 @@ class Device extends Sequelize.Model {
   }
   static associate(db) {
     db.Device.belongsTo(db.Area, {
-      foreignKey: "area_name",
+      foreignKey: "placeName",
       targetKey: "name",
     });
   }

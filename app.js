@@ -1,7 +1,7 @@
 const express = require("express");
 const { sequelize } = require("./models");
 const deviceRouter = require("./routes/device");
-const areaRouter = require("./routes/area");
+const placeRouter = require("./routes/place");
 const app = express();
 
 app.set("port", 3000);
@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/device", deviceRouter);
-app.use("/area", areaRouter);
+app.use("/place", placeRouter);
 
 app.use("/", (req, res) => {
   res.send("정보통신공학과 야간 4학년 프로젝트실습");

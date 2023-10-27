@@ -1,5 +1,5 @@
 const express = require("express");
 const Device = require("../models/device");
-const Area = require("../models/area");
+const Place = require("../models/place");
 
 const router = express.Router();

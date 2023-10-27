@@ -1,8 +1,8 @@
 const Sequelize = require("sequelize");
 
-class Area extends Sequelize.Model {
+class Place extends Sequelize.Model {
   static initiate(sequelize) {
-    Area.init(
+    Place.init(
       {
         name: {
           type: Sequelize.STRING(50),
@@ -22,8 +22,8 @@ class Area extends Sequelize.Model {
         sequelize,
         timestamps: false,
         underscored: false,
-        modelName: "Area",
-        tableName: "area",
+        modelName: "Place",
+        tableName: "place",
         paranoid: false,
         charset: "utf8mb4",
         collate: "utf8mb4_general_ci",
@@ -31,8 +31,8 @@ class Area extends Sequelize.Model {
     );
   }
   static associate(db) {
-    db.Area.hasMany(db.Device, { foreignKey: "area_name", sourceKey: "name" });
+    db.Place.hasMany(db.Device, { foreignKey: "placeName", sourceKey: "name" });
   }
 }
 
-module.exports = Area;
+module.exports = Place;

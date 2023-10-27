@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 const Device = require("./device");
-const Area = require("./area");
+const Place = require("./place");
 //const env = process.env.NODE_ENV || "development";
 const env = "development";
 const config = require(__dirname + "/../config/config.json")[env];
@@ -16,12 +16,12 @@ let sequelize = new Sequelize(
 db.sequelize = sequelize;
 
 db.Device = Device;
-db.Area = Area;
+db.Place = Place;
 
 Device.initiate(sequelize);
-Area.initiate(sequelize);
+Place.initiate(sequelize);
 
 Device.associate(db);
-Area.associate(db);
+Place.associate(db);
 
 module.exports = db;

@@ -1,5 +1,5 @@
 const express = require("express");
-const Area = require("../models/area");
+const Place = require("../models/place");
 
 const router = express.Router();
 
@@ -7,8 +7,8 @@ router
   .route("/")
   .get(async (req, res, next) => {
     try {
-      const areas = await Area.findAll();
-      res.status(200).json(areas);
+      const places = await Place.findAll();
+      res.status(200).json(places);
     } catch (err) {
       console.error(err);
       next(err);
@@ -16,12 +16,12 @@ router
   })
   .post(async (req, res, next) => {
     try {
-      const area = await Area.create({
+      const place = await Place.create({
         name: req.body.name,
         address: req.body.address,
         remark: req.body.remark,
       });
-      res.status(201).json(area);
+      res.status(201).json(place);
     } catch (err) {
       console.error(err);
       next(err);
@@ -32,7 +32,7 @@ router
   .route("/:name")
   .put(async (req, res, next) => {
     try {
-      const area = await Area.update(
+      const place = await Place.update(
         {
           name: req.body.name,
           address: req.body.address,
@@ -40,7 +40,7 @@ router
         },
         { where: { name: req.params.name } }
       );
-      res.status(200).json(area);
+      res.status(200).json(place);
     } catch (err) {
       console.error(err);
       next(err);
@@ -48,10 +48,10 @@ router
   })
   .delete(async (req, res, next) => {
     try {
-      const area = Area.destroy({
+      const place = Place.destroy({
         where: { name: req.params.name },
       });
-      res.status(200).json(area);
+      res.status(200).json(place);
     } catch (err) {
       console.error(err);
       next(err);

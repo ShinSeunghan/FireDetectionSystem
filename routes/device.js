@@ -1,5 +1,5 @@
 const express = require("express");
-const Device = require("../models/deivce");
+const Device = require("../models/device");
 
 const router = express.Router();
 
@@ -17,7 +17,7 @@ router
   .post(async (req, res, next) => {
     try {
       const device = await Device.create({
-        area_name: req.area_name,
+        area_name: req.body.area_name,
         name: req.body.name,
         sensor_temp: req.body.sensor_temp,
         motor_state: req.body.motor_state,

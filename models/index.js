@@ -1,5 +1,5 @@
 const Sequelize = require("sequelize");
-const Device = require("./deivce");
+const Device = require("./device");
 const Area = require("./area");
 //const env = process.env.NODE_ENV || "development";
 const env = "development";

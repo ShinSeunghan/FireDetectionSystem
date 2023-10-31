@@ -38,6 +38,8 @@ router
       const device = await Device.update(
         {
           name: req.body.name,
+          placeName: req.body.placeName,
+          remark: req.body.remark,
         },
         { where: { name: req.params.name } }
       );

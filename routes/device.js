@@ -32,7 +32,7 @@ router
   });
 
 router
-  .route("/:name")
+  .route("/:id")
   .put(async (req, res, next) => {
     try {
       const device = await Device.update(
@@ -41,7 +41,7 @@ router
           placeName: req.body.placeName,
           remark: req.body.remark,
         },
-        { where: { name: req.params.name } }
+        { where: { id: req.params.id } }
       );
       res.status(200).json(device);
     } catch (err) {

@@ -20,7 +20,9 @@ router
         placeName: req.body.placeName,
         name: req.body.name,
         sensorTemp: req.body.sensorTemp,
+        isPerson: req.body.isPerson,
         motorState: req.body.motorState,
+        remark: req.body.remark,
       });
       res.status(201).json(device);
     } catch (err) {
@@ -36,7 +38,6 @@ router
       const device = await Device.update(
         {
           name: req.body.name,
-          address: req.body.address,
         },
         { where: { name: req.params.name } }
       );

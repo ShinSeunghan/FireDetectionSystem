@@ -17,8 +17,16 @@ class Device extends Sequelize.Model {
           type: Sequelize.INTEGER,
           allowNull: true,
         },
+        isPerson: {
+          type: Sequelize.BOOLEAN,
+          allowNull: true,
+        },
         motorState: {
           type: Sequelize.BOOLEAN,
+          allowNull: true,
+        },
+        remark: {
+          type: Sequelize.STRING(45),
           allowNull: true,
         },
       },
